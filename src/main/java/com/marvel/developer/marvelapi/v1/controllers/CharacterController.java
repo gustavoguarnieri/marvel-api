@@ -30,25 +30,25 @@ public class CharacterController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/{charId}/comics", method = RequestMethod.GET)
+    @GetMapping(value = "/{charId}/comics", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ComicsEntity>> getComicsByCharacterId(@PathVariable Long charId){
         return characterService.getComicsByCharacterId(charId);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/{charId}/events", method = RequestMethod.GET)
+    @GetMapping(value = "/{charId}/events", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<EventsEntity>> getEventsByCharacterId(@PathVariable Long charId){
         return characterService.getEventsByCharacterId(charId);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/{charId}/series", method = RequestMethod.GET)
+    @GetMapping(value = "/{charId}/series", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<SeriesEntity>> getSeriesByCharacterId(@PathVariable Long charId){
         return characterService.getSeriesByCharacterId(charId);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/{charId}/stories", method = RequestMethod.GET)
+    @GetMapping(value = "/{charId}/stories", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<StoriesEntity>> getStoriesByCharacterId(@PathVariable Long charId){
         return characterService.getStoriesByCharacterId(charId);
     }
